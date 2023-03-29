@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "first_app/css/style.css" %}">
+    
+    <title>forbes logo</title>
+</head>
+<body>
+    <h1>{{image_name}}</h1>
+    <img src="{{image_url}}" alt="">
+    <img src="{% static "first_app/logos/forbes.png"%}" alt="alt image">
+    
+</body>
+</html>
