@@ -1,13 +1,32 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static\first_app\css\style.css">
     <title>First app</title>
 </head>
 <body>
     <h1>Hello this is first app </h1>
     {{ insert_me }}
+
+    <table>
+        <thead>
+            <th>Site Name</th>
+            <th>Date Accessed</th>
+        </thead>
+        {% for each in access_records %}
+    
+        <tr>
+            <td class="test"> {{each.name}}</td>
+            <td class="test1"> {{each.date}}</td>
+        </tr>
+        
+        
+        {% endfor %}
+    </table>
+    
 </body>
 </html>
