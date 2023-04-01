@@ -1,26 +1,40 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Users</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="{% static 'third_app\css\users.css' %}" />
+		<title>Users</title>
+	</head>
+	<body>
+		<div class="container"></div>
+		<div class="containernpu<input type="button" value=""></div>
+			<div class="sign-up-box">
+				<h1>Please Signup Here</h1>
+				<form method="POST">{{form.as_p}} {% csrf_token %}
 
-    {% if users %}
-    <ol>
-        {% for person in users %}
-        <li>User Info
-            <ul>
-                <li>first_name: {{person.first_name}}</li>
-                <li>last name: {{person.last_name}}</li>
-                <li>email: {{person.email}}</li>
-            </ul>
-        </li>
-        {% endfor %}
-    </ol>
-    {% endif %}
-    
-</body>
+                    <input type="submit" value="Submit" class="btn">
+                </form>
+			</div>
+
+			<!-- Basic call to model and display data -->
+			<!-- {% if users %}
+			<ol>
+				{% for person in users %}
+				<li>
+					User Info
+					<ul>
+						<li>first_name: {{person.first_name}}</li>
+						<li>last name: {{person.last_name}}</li>
+						<li>email: {{person.email}}</li>
+					</ul>
+				</li>
+				{% endfor %}
+			</ol>
+			{% endif %} -->
+		</div>
+		<div class="container"></div>
+	</body>
 </html>
