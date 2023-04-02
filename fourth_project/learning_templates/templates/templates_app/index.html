@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends "templates_app/base.html" %}
+{% load basic_tags %}
+{% block body_block %}
+    <h1>{{ title | upper }}</h1>
+    <h2>This is an example of index page template inheritance</h2>
+{% endblock body_block %}
+{% block footer_block %}
+    <h5 class="footer">
+        <p>THis is index in index page</p>
+        <p>{{ footer | upper }}</p>
+        <p>{{ footer_right | special_replace:'in index page' }}</p>
+    </h5>
+{% endblock footer_block %}

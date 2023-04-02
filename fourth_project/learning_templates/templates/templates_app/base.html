@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="{% static 'template_app/main.css' %}" />
+		<title>Document</title>
+	</head>
+	<body>
+		<nav class="nav">
+			<ul class="nav-items">
+				<li class="nav-item">
+					<a href="{% url 'index' %}" class="nav-link">Brand</a>
+				</li>
+				<li class="nav-item">
+					<a href="{% url 'admin:index' %}" class="nav-link">Admin</a>
+				</li>
+				<li class="nav-item">
+					<a href="{% url 'templates_app:other' %}" class="nav-link">Other</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link">Fourth</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="container">
+			<div class="container-left"></div>
+			<div class="container-mid">{% block body_block %} {% endblock %}</div>
+			<div class="container-right"></div>
+		</div>
+		<footer>{% block footer_block %} {% endblock %}</footer>
+	</body>
+</html>

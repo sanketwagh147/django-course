@@ -6,3 +6,6 @@ __pycache__
 *.logs
 *.xlsx
 *.pdf
+
+.idea/**
+.sourcery.yaml

@@ -1,0 +1,53 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+
+nav{
+    height: 8vh;
+    /* background-color: aquamarine; */
+}
+
+.nav-items{
+    justify-content: space-between;
+    display: flex;
+    background: yellowgreen;
+    width: 100%;
+    font-size: 2rem;
+    padding: 1rem;
+    list-style: none;
+}
+.nav-item{
+    
+    margin: 1rem 4rem;
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    height: 90vh;
+}
+.container-mid{
+    background: gray;
+    width: 80%;
+    padding: 1rem;
+
+}
+.nav-item:nth-last-child(2){
+    flex: 1;
+}
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    height: 2vh;
+    text-align: center;
+    align-items: center;
+}
