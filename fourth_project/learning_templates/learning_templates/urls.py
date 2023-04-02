@@ -22,3 +22,5 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("template_app/", include("template_app.urls")),
 ]
+
+# dummy line to check if user is registerd as commit msg"
