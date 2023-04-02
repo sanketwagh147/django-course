@@ -13,21 +13,32 @@ html{
 
 nav{
     height: 8vh;
+    z-index: 999;
     /* background-color: aquamarine; */
 }
 
 .nav-items{
     justify-content: space-between;
     display: flex;
-    background: yellowgreen;
+    /* background-image: linear-gradient(to right bottom,rgba(215, 209, 90, 0.35), rgba(167, 146, 37, 0.35)), linear-gradient(to right bottom, rgba(143, 198, 48, 0.337), rgba(138, 208, 40, 0.668)); */
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     width: 100%;
     font-size: 2rem;
     padding: 1rem;
     list-style: none;
 }
+
 .nav-item{
     
     margin: 1rem 4rem;
+}
+a{
+    color: #e8e8e8;
+    text-decoration: none !important;
+
 }
 
 .container{
