@@ -26,14 +26,26 @@ class CBView(View):
  """
 
 
+class IndexView(TemplateView):
+    template_name = "index.html"
+
+
+# ⭐ by default it will return school_list as variable to template to override use above
 class SchoolListView(ListView):
     """This will provide all the list of all items"""
 
+    # override default <model>_list(variable passed to template)
+    context_object_name = "schools"
+
     model = School
+    template_name = "school_list.html"
 
 
 class SchoolDetailView(DetailView):
     """This will provide all the list of all items"""
 
+    # DetailView returns lower case version of class to override it
+    # we can use :-
+    context_object_name = "school_detail"
     model = School
     template_name = "school_detail.html"

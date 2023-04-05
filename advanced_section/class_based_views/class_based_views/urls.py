@@ -15,11 +15,12 @@ Including another URLconf
 """
 from CBV_APP import views
 from django.contrib import admin
-from django.urls import path, re_path
+from django.urls import include, path, re_path
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     # re_path(r"^$", views.index),  # function based view
     # re_path(r"^$", views.CBView.as_view()),  # CBV version
     re_path(r"^$", views.IndexView.as_view()),  # CBV version
+    path(r"CBV_APP/", include("CBV_APP.urls", namespace="CBV_APP")),  # CBV version
 ]
