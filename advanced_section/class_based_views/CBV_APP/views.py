@@ -2,9 +2,18 @@ from typing import Any, Dict
 
 from CBV_APP.models import School, Student
 from django.shortcuts import HttpResponse, render
+from django.urls import reverse, reverse_lazy
 
 # Create your views here.
-from django.views.generic import DeleteView, DetailView, ListView, TemplateView, View
+from django.views.generic import (
+    CreateView,
+    DeleteView,
+    DetailView,
+    ListView,
+    TemplateView,
+    UpdateView,
+    View,
+)
 
 """ # Function based views 
 def index(request):
@@ -49,3 +58,21 @@ class SchoolDetailView(DetailView):
     context_object_name = "school_detail"
     model = School
     template_name = "school_detail.html"
+
+
+class SchoolCreateView(CreateView):
+    fields = ("name", "principal", "location")
+    model = School
+    template_name = "school_form.html"
+
+
+class SchoolUpdateView(UpdateView):
+    fields = ("name", "principal")
+    model = School
+    template_name = "school_form.html"
+
+
+class SchoolDeleteView(DeleteView):
+    model = School
+    success_url = reverse_lazy("CBV_APP:list")
+    template_name = "school_confirm_delete.html"
