@@ -6,6 +6,8 @@ from django import forms
 
 
 class PostForm(forms.ModelForm):
+    template_name = "form_list"
+
     class Meta:
         model = Post
         fields = ("author", "title", "text")
