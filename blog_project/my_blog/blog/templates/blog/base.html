@@ -51,7 +51,7 @@
             <ul class="right-nav">
                 {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a href="{% url 'post_new' %}">New Post</a>
+                        <a href="{% url 'post_new' %}">Create new post</a>
                     </li>
                     <li class="nav-item">
                         <a href="{% url 'post_draft_list' %}">Drafts</a>
@@ -70,12 +70,14 @@
             </ul>
         </nav>
         <div class="main-container">
+            <div class="left-row"></div>
             <div class="main-row">
                 <div class="col-md-8">
                     {% block content %}
                     {% endblock content %}
                 </div>
             </div>
+            <div class="right-row"></div>
         </div>
     </body>
 </html>
