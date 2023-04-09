@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_bootstrap5",
     "accounts",
 ]
 
@@ -116,11 +117,17 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
+import os
 
 STATIC_URL = "static/"
-STATICFILES_DIR = [Path(BASE_DIR) / "static"]
+# print(STATIC_URL)
+# static STATICFILES_DIR = [Path(BASE_DIR) / "static"]
+STATIC_DIR = BASE_DIR / "static"
+STATICFILES_DIRS = [STATIC_DIR]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+LOGIN_REDIRECT_URL = "test"
+LOGIN_REDIRECT_URL = "thanks"
