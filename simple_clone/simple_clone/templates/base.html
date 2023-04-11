@@ -17,27 +17,27 @@
               rel="stylesheet"/>
         <link rel="stylesheet" href="{% static 'css/master.css' %}"/>
     </head>
-    <body>
+    <body id = "canvas">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand mynav" href="{% url 'home' %}">Star Social</a>
                 <ul class="navbar navbar-dark navbar-right`">
                     {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Post</a>
+                            <a class="nav-link" href="{% url 'posts:create' %}">Post</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Groups</a>
+                            <a class="nav-link" href="{% url 'groups:all' %}">Groups</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Create Groups</a>
+                            <a class="nav-link" href="{% url 'groups:create' %}">Create Groups</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'accounts:logout' %}">log out</a>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Groups</a>
+                            <a class="nav-link" href="{% url 'groups:all' %}">Groups</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
@@ -54,4 +54,5 @@
             {% endblock content %}
         </div>
     </body>
+    <script type="text/javascript" src="{% static 'simple_clone/js/master.js' %}"></script>
 </html>

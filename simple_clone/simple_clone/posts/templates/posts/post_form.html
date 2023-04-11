@@ -1,0 +1,10 @@
+{% extends 'posts/post_base.html' %}
+{% load django_bootstrap5 %}
+{% block post_content %}
+    <h4>Create a new post</h4>
+    <form id="postForm" method="post" action:"{% url 'posts:create' %}">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" class="btn btn-primary" value="post" />
+    </form>
+{% endblock post_content %}

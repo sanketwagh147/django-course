@@ -13,9 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path, re_path
+
 from simple_clone.views import HomePage, TestPage, ThanksPage
 
 urlpatterns = [
@@ -27,4 +29,12 @@ urlpatterns = [
         r"^test/", TestPage.as_view(template_name="test.html"), name="test"
     ),  # uses inbuilt auth
     re_path(r"^thanks/", ThanksPage.as_view(), name="thanks"),  # uses inbuilt auth
+    re_path(r"^posts/", include("posts.urls", namespace="posts")),
+    re_path(r"^groups/", include("groups.urls", namespace="groups")),
 ]
+
+
+if settings.DEBUG:
+    import debug_toolbar
+
+    urlpatterns = [re_path(r"^__debug__/", include(debug_toolbar.urls))] + urlpatterns

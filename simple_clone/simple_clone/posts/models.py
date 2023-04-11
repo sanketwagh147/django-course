@@ -1,6 +1,6 @@
 from email import message
 
-import misaka
+import markdown
 from django.conf import Settings
 from django.contrib.auth import get_user_model
 from django.db import models
@@ -25,7 +25,7 @@ class Post(models.Model):
         return self.message
 
     def save(self, *args, **kwargs):
-        self.message_html = misaka.html(self.message)
+        self.message_html = markdown.markdown(self.message)
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
@@ -35,5 +35,5 @@ class Post(models.Model):
 
     class Meta:
         # - below indicates descending order
-        ordering = ["-created-at"]
+        ordering = ["-created_at"]
         unique_together = ["user", "message"]

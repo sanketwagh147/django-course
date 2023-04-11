@@ -1,9 +1,10 @@
 {% extends 'groups/group_base.html' %}
 {% load django_bootstrap5 %}
-{% block content_block %}
+{% block content %}
     <h4>Craete a new gorup!</h4>
     <form action="{% url 'groups:create' %}" id="groupForm" method="post">
         {% csrf_token %}
+        {% bootstrap_form form %}
         <input type="submit" class='btn btn-primary'  value="Create"/>
     </form>
-{% endblock content_block %}
+{% endblock content %}
